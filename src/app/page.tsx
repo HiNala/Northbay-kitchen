@@ -1,5 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
+import InstagramGallery from "@/components/ui/InstagramGallery";
+import { NBKBTestimonials } from "@/components/ui/TestimonialsDemo";
 
 export default function Home() {
   return (
@@ -214,46 +216,40 @@ export default function Home() {
       </section>
 
       {/* Testimonial Section */}
-      <section className="w-full py-20 bg-zinc-900 text-white relative">
-        <div className="absolute inset-0 z-0 opacity-20">
-          <div className="absolute inset-0 bg-black/60 z-10"></div>
-          <div className="w-full h-full relative">
-            <Image 
-              src="/mock/kitchens/kitchen-2.jpg"
-              alt="Kitchen design background"
-              fill
-              className="object-cover"
-              sizes="100vw"
-            />
+      <div className="bg-white">
+        <NBKBTestimonials />
+      </div>
+      
+      <div className="w-full py-8 bg-white text-center">
+        <Link
+          href="/testimonials"
+          className="px-8 py-3 border border-zinc-900 text-zinc-900 hover:bg-zinc-100 transition-colors inline-block"
+        >
+          Read More Testimonials
+        </Link>
+      </div>
+
+      {/* Instagram Section */}
+      <section className="w-full py-20 bg-white">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-10">
+            <h2 className="text-3xl font-serif mb-4">Follow @studiomcgee</h2>
+            <div className="w-16 h-0.5 bg-zinc-300 mx-auto mb-6"></div>
+            <p className="text-lg text-zinc-600 max-w-2xl mx-auto">
+              Get inspired by our latest projects and designs on Instagram.
+            </p>
           </div>
-        </div>
-        
-        <div className="container mx-auto px-4 max-w-4xl relative z-10">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl font-serif mb-4">What Our Clients Say</h2>
-            <div className="w-16 h-0.5 bg-white/30 mx-auto"></div>
+          
+          <div className="mb-10">
+            <InstagramGallery limit={6} showUsername={false} />
           </div>
           
           <div className="text-center">
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="mx-auto mb-8 h-12 w-12 text-zinc-500">
-              <path d="M3 21c3 0 7-1 7-8V5c0-1.25-.756-2.017-2-2H4c-1.25 0-2 .75-2 1.972V11c0 1.25.75 2 2 2 1 0 1 0 1 1v1c0 1-1 2-2 2s-1 .008-1 1.031V20c0 1 0 1 1 1z"></path>
-              <path d="M15 21c3 0 7-1 7-8V5c0-1.25-.757-2.017-2-2h-4c-1.25 0-2 .75-2 1.972V11c0 1.25.75 2 2 2h.75c0 2.25.25 4-2.75 4v3c0 1 0 1 1 1z"></path>
-            </svg>
-            
-            <blockquote className="text-xl md:text-2xl mb-10 font-light italic">
-              "Northbay Kitchen & Bath transformed our outdated kitchen into a stunning space that honors our home's history while giving us all the modern amenities we wanted."
-            </blockquote>
-            
-            <p className="text-zinc-400 mb-2 font-medium">The Peterson Family</p>
-            <p className="text-zinc-500">Santa Rosa, CA</p>
-          </div>
-          
-          <div className="text-center mt-14">
-            <Link
-              href="/testimonials"
-              className="px-8 py-3 border border-white text-white hover:bg-white/10 transition-colors inline-block"
+            <Link 
+              href="/instagram"
+              className="px-8 py-3 border border-zinc-900 text-zinc-900 hover:bg-zinc-100 transition-colors inline-block"
             >
-              Read More Testimonials
+              View All Posts
             </Link>
           </div>
         </div>

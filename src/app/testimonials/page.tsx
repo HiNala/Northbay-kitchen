@@ -4,242 +4,129 @@ import Image from 'next/image';
 
 export const metadata: Metadata = {
   title: 'Testimonials | Northbay Kitchen & Bath',
-  description: 'Read what our clients have to say about their experience working with Northbay Kitchen & Bath Design Center.',
+  description: 'Read what our clients have to say about their experience with Northbay Kitchen & Bath Design Center.',
 };
 
+interface Testimonial {
+  id: string;
+  name: string;
+  title?: string;
+  location: string;
+  text: string;
+  image?: string;
+}
+
 export default function TestimonialsPage() {
+  const testimonials: Testimonial[] = [
+    {
+      id: '1',
+      name: 'Nicole Wiseman',
+      location: 'Sonoma County',
+      text: 'From the moment we walked in we felt good about this place, with someone right there at the door to greet us and assess our needs. From there we were sent over to Kari who has been wonderful and turned our stressful renovation into a smooth and easier process. She is extremely knowledgeable and helped us make decisions. Kari really cares about her clients and gives her full attention. We are so impressed with the customer service at this place and would recommend to anyone.'
+    },
+    {
+      id: '2',
+      name: 'Linda Reid',
+      location: 'Petaluma',
+      text: 'Northbay Kitchen & Bath designed and remodeled my master bathroom and turned it into the master bath I have always wanted. I went in to their amazing and well appointed showroom just to get some ideas and Catherine was so pleasant and helpful, I later went back with some sketches. Catherine improved upon the design with solutions I hadn\'t even thought of! Her brilliant design sense made an overwhelming process simply a pleasure. Dave and his crew made the stress of construction minimal. Dave spent time with me helping to make decisions or problem solving where necessary. Though ours was a relatively small job, I never felt like a low priority. There was no "nickle and dimeing", the job kept moving along and the results were stunning. My husband is a contractor and has pretty high standards and he was completely satisfied as well. These people were just a pleasure to work with!'
+    },
+    {
+      id: '3',
+      name: 'Jim Castille',
+      location: 'Santa Rosa',
+      text: 'Great experience with Northbay Kitchen and Bath!! Couldn\'t be happier with our updated kitchen! We knew we wanted a new kitchen but we really didn\'t know where to start. Megan from the Northbay design team helped us each step of the way in the planning process and brought so many great ideas into the design of our kitchen. All of the elements of our kitchen tied together perfectly from the cabinets to the island to the fixtures. Our new Miele appliances that Dave the owner recommended are amazing and were worth spending a little extra to get. The install teams were great and involved us in the decision making throughout the process. Everything turned out perfect and we are extremely satisfied with the way our new kitchen turned out. Would highly recommend Northbay Kitchen & Bath. Thank you Dave, Catherine, and Megan!!!'
+    },
+    {
+      id: '4',
+      name: 'Dal Heagley',
+      location: 'Petaluma',
+      text: 'I live in the neighborhood a few blocks away from the store. My master bathroom has a huge heavy glass swinging door, that I could see (with my Senior Citizen Eyes) that the door wasn\'t hanging straight, and was beginning to scrape the wall when swinging it open and shut. I stopped by the store to see if they could refer me to someone who could fix this. The staff on hand was discussing where they might refer me, when the OWNER of Northbay, on his way out for the weekend, heard our discussion. He hopped in his car, came to my house, and personally fixed that door! And refused to take any fee for it. I did get a little scolding ("...if that door falls down, it\'ll kill you!"). To say I was grateful would be an understatement! It was like family taking care of family. Unheard of these days, and I never forgot it.'
+    },
+    {
+      id: '5',
+      name: 'Fabien Vives',
+      location: 'Sonoma County',
+      text: 'If you\'re looking to remodel your kitchen or your bathroom you will find everything that you need. They have an amazing selection of materials, tiles and hardware. They provide great designs services, done with taste and they can also do the install. Highly recommend.'
+    },
+    {
+      id: '6',
+      name: 'David Graves',
+      location: 'Napa Valley',
+      text: 'David is very knowledgeable and has a great staff! Tessa was especially helpful as well. Beautiful building with a great selection of products. I would absolutely recommend checking them out!'
+    },
+    {
+      id: '7',
+      name: 'Houzz User',
+      location: 'Sonoma County',
+      text: 'North bay is our go to spot for design and material purchasing. We have used their services on multiple projects and continue to recommend them to our new clients. Stop by north bay kitchen and bath for all of your remodeling design and material needs.'
+    },
+    {
+      id: '8',
+      name: 'Houzz User',
+      title: 'Ski House Project Client',
+      location: 'Lake Tahoe',
+      text: 'Northbay Kitchen & Bath (Chloe) helped us pick out all the tile for a new house construction project. This included 3 different "stone" types for bathrooms and entry foyer; Backsplash tile for the kitchen and a very special "carpet tile" for the Master Bathroom. The quality of the products are top notch and look amazing in our new ski house. We also purchased cabinet pulls, bath hardware, and a very nice tub filler with valve. Northbay can truly be a one-stop experience for the discerning design person.'
+    }
+  ];
+
   return (
     <main className="flex min-h-screen flex-col">
       {/* Hero Section */}
       <section className="w-full bg-zinc-100 py-16 md:py-24">
         <div className="container mx-auto px-4 text-center">
-          <h1 className="text-4xl md:text-5xl font-serif mb-6">Client Testimonials</h1>
+          <h1 className="text-4xl md:text-5xl font-serif mb-4">Testimonials</h1>
+          <div className="w-16 h-0.5 bg-zinc-300 mx-auto mb-6"></div>
           <p className="text-lg text-zinc-600 max-w-2xl mx-auto">
-            Read what our clients have to say about their experience working with our team.
+            Kind Words from Our Clients!
           </p>
+        </div>
+      </section>
+
+      {/* Featured Testimonial */}
+      <section className="w-full py-16 bg-zinc-50">
+        <div className="container mx-auto px-4 max-w-4xl">
+          <div className="text-center mb-16">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="mx-auto mb-4 h-12 w-12 text-zinc-300">
+              <path d="M3 21c3 0 7-1 7-8V5c0-1.25-.756-2.017-2-2H4c-1.25 0-2 .75-2 1.972V11c0 1.25.75 2 2 2 1 0 1 0 1 1v1c0 1-1 2-2 2s-1 .008-1 1.031V20c0 1 0 1 1 1z"></path>
+              <path d="M15 21c3 0 7-1 7-8V5c0-1.25-.757-2.017-2-2h-4c-1.25 0-2 .75-2 1.972V11c0 1.25.75 2 2 2h.75c0 2.25.25 4-2.75 4v3c0 1 0 1 1 1z"></path>
+            </svg>
+            
+            <blockquote className="text-2xl md:text-3xl mb-8 font-light italic text-zinc-700">
+              "Our team was able to design our dream kitchen with Northbay's expertise. The attention to detail and quality materials exceeded our expectations!"
+            </blockquote>
+            
+            <p className="text-lg font-medium mb-1">The Peterson Family</p>
+            <p className="text-zinc-500">Santa Rosa, CA</p>
+          </div>
         </div>
       </section>
 
       {/* Testimonials Grid */}
       <section className="w-full py-16">
         <div className="container mx-auto px-4">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            {/* Testimonial 1 */}
-            <div className="border border-zinc-200 rounded-lg p-8">
-              <div className="flex items-center mb-6">
-                <div className="w-16 h-16 bg-zinc-200 rounded-full overflow-hidden">
-                  {/* Client photo placeholder */}
-                  <div className="w-full h-full flex items-center justify-center">
-                    <p className="text-zinc-500 text-xs">Photo</p>
-                  </div>
-                </div>
-                <div className="ml-4">
-                  <h3 className="text-lg font-medium">Sarah & Michael Peterson</h3>
-                  <p className="text-zinc-500">Santa Rosa, CA</p>
-                </div>
-              </div>
-              <div>
-                <div className="flex mb-4">
-                  {[...Array(5)].map((_, i) => (
-                    <svg key={i} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="w-5 h-5 text-brass-400">
-                      <path fillRule="evenodd" d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.007 5.404.433c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.433 2.082-5.006z" clipRule="evenodd" />
-                    </svg>
-                  ))}
-                </div>
-                <blockquote className="text-zinc-600 mb-4">
-                  "NBKB transformed our outdated kitchen into a stunning space that honors our home's history while giving us all the modern amenities we wanted. Their attention to detail and craftsmanship is exceptional."
-                </blockquote>
-                <p className="text-zinc-500">Kitchen Remodel, 2024</p>
-              </div>
-            </div>
-
-            {/* Testimonial 2 */}
-            <div className="border border-zinc-200 rounded-lg p-8">
-              <div className="flex items-center mb-6">
-                <div className="w-16 h-16 bg-zinc-200 rounded-full overflow-hidden">
-                  {/* Client photo placeholder */}
-                  <div className="w-full h-full flex items-center justify-center">
-                    <p className="text-zinc-500 text-xs">Photo</p>
-                  </div>
-                </div>
-                <div className="ml-4">
-                  <h3 className="text-lg font-medium">Jennifer & Mark Williams</h3>
-                  <p className="text-zinc-500">Healdsburg, CA</p>
-                </div>
-              </div>
-              <div>
-                <div className="flex mb-4">
-                  {[...Array(5)].map((_, i) => (
-                    <svg key={i} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="w-5 h-5 text-brass-400">
-                      <path fillRule="evenodd" d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.007 5.404.433c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.433 2.082-5.006z" clipRule="evenodd" />
-                    </svg>
-                  ))}
-                </div>
-                <blockquote className="text-zinc-600 mb-4">
-                  "Our bathroom feels like a luxury spa retreat. The attention to detail and craftsmanship exceeded our expectations. The team at NBKB was professional, responsive, and made the process enjoyable."
-                </blockquote>
-                <p className="text-zinc-500">Bathroom Remodel, 2024</p>
-              </div>
-            </div>
-
-            {/* Testimonial 3 */}
-            <div className="border border-zinc-200 rounded-lg p-8">
-              <div className="flex items-center mb-6">
-                <div className="w-16 h-16 bg-zinc-200 rounded-full overflow-hidden">
-                  {/* Client photo placeholder */}
-                  <div className="w-full h-full flex items-center justify-center">
-                    <p className="text-zinc-500 text-xs">Photo</p>
-                  </div>
-                </div>
-                <div className="ml-4">
-                  <h3 className="text-lg font-medium">David & Lisa Thompson</h3>
-                  <p className="text-zinc-500">Sebastopol, CA</p>
-                </div>
-              </div>
-              <div>
-                <div className="flex mb-4">
-                  {[...Array(5)].map((_, i) => (
-                    <svg key={i} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="w-5 h-5 text-brass-400">
-                      <path fillRule="evenodd" d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.007 5.404.433c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.433 2.082-5.006z" clipRule="evenodd" />
-                    </svg>
-                  ))}
-                </div>
-                <blockquote className="text-zinc-600 mb-4">
-                  "We were hesitant to remodel our kitchen due to past negative experiences with contractors. NBKB restored our faith in the process! They were transparent, reliable, and delivered exactly what they promised, on time and on budget."
-                </blockquote>
-                <p className="text-zinc-500">Kitchen Remodel, 2023</p>
-              </div>
-            </div>
-
-            {/* Testimonial 4 */}
-            <div className="border border-zinc-200 rounded-lg p-8">
-              <div className="flex items-center mb-6">
-                <div className="w-16 h-16 bg-zinc-200 rounded-full overflow-hidden">
-                  {/* Client photo placeholder */}
-                  <div className="w-full h-full flex items-center justify-center">
-                    <p className="text-zinc-500 text-xs">Photo</p>
-                  </div>
-                </div>
-                <div className="ml-4">
-                  <h3 className="text-lg font-medium">Patricia & Robert Johnson</h3>
-                  <p className="text-zinc-500">Windsor, CA</p>
-                </div>
-              </div>
-              <div>
-                <div className="flex mb-4">
-                  {[...Array(5)].map((_, i) => (
-                    <svg key={i} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="w-5 h-5 text-brass-400">
-                      <path fillRule="evenodd" d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.007 5.404.433c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.433 2.082-5.006z" clipRule="evenodd" />
-                    </svg>
-                  ))}
-                </div>
-                <blockquote className="text-zinc-600 mb-4">
-                  "The design team at NBKB has an incredible eye for detail. They took our general ideas and transformed them into a cohesive design that exceeded our expectations. Our new bathroom is both beautiful and functional."
-                </blockquote>
-                <p className="text-zinc-500">Bathroom Remodel, 2023</p>
-              </div>
-            </div>
-
-            {/* Testimonial 5 */}
-            <div className="border border-zinc-200 rounded-lg p-8">
-              <div className="flex items-center mb-6">
-                <div className="w-16 h-16 bg-zinc-200 rounded-full overflow-hidden">
-                  {/* Client photo placeholder */}
-                  <div className="w-full h-full flex items-center justify-center">
-                    <p className="text-zinc-500 text-xs">Photo</p>
-                  </div>
-                </div>
-                <div className="ml-4">
-                  <h3 className="text-lg font-medium">Emily & James Rodriguez</h3>
-                  <p className="text-zinc-500">Petaluma, CA</p>
-                </div>
-              </div>
-              <div>
-                <div className="flex mb-4">
-                  {[...Array(5)].map((_, i) => (
-                    <svg key={i} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="w-5 h-5 text-brass-400">
-                      <path fillRule="evenodd" d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.007 5.404.433c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.433 2.082-5.006z" clipRule="evenodd" />
-                    </svg>
-                  ))}
-                </div>
-                <blockquote className="text-zinc-600 mb-4">
-                  "We renovated both our kitchen and master bathroom with NBKB, and couldn't be happier with the results. Their project management was impeccable, keeping everything on schedule and addressing any concerns promptly."
-                </blockquote>
-                <p className="text-zinc-500">Kitchen & Bathroom Remodel, 2023</p>
-              </div>
-            </div>
-
-            {/* Testimonial 6 */}
-            <div className="border border-zinc-200 rounded-lg p-8">
-              <div className="flex items-center mb-6">
-                <div className="w-16 h-16 bg-zinc-200 rounded-full overflow-hidden">
-                  {/* Client photo placeholder */}
-                  <div className="w-full h-full flex items-center justify-center">
-                    <p className="text-zinc-500 text-xs">Photo</p>
-                  </div>
-                </div>
-                <div className="ml-4">
-                  <h3 className="text-lg font-medium">Karen & Thomas Anderson</h3>
-                  <p className="text-zinc-500">Santa Rosa, CA</p>
-                </div>
-              </div>
-              <div>
-                <div className="flex mb-4">
-                  {[...Array(5)].map((_, i) => (
-                    <svg key={i} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="w-5 h-5 text-brass-400">
-                      <path fillRule="evenodd" d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.007 5.404.433c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.433 2.082-5.006z" clipRule="evenodd" />
-                    </svg>
-                  ))}
-                </div>
-                <blockquote className="text-zinc-600 mb-4">
-                  "The team at NBKB brought our vision to life with a level of quality that exceeded our expectations. Their design suggestions elevated our original ideas, and the craftmanship is something we'll enjoy for years to come."
-                </blockquote>
-                <p className="text-zinc-500">Kitchen Remodel, 2022</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Featured Project */}
-      <section className="w-full py-16 bg-zinc-50">
-        <div className="container mx-auto px-4">
-          <h2 className="text-3xl font-serif mb-12 text-center">Featured Success Story</h2>
-          
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            <div className="aspect-[4/3] bg-zinc-200 rounded-lg overflow-hidden">
-              {/* Project image placeholder */}
-              <div className="w-full h-full flex items-center justify-center">
-                <p className="text-zinc-500 text-sm">Project Image Placeholder</p>
-              </div>
-            </div>
-            
-            <div>
-              <h3 className="text-2xl font-medium mb-4">The Wilson Family's Home Transformation</h3>
-              
-              <blockquote className="text-zinc-600 italic mb-6">
-                "Working with NBKB was the best decision we made for our renovation. Their expertise and attention to detail made all the difference in creating a space that truly feels like home."
-              </blockquote>
-              
-              <p className="text-zinc-600 mb-4">
-                The Wilsons came to us with a challenging project: modernizing their 1940s kitchen while preserving the home's historic character. Our design team worked closely with them to create a space that blends contemporary functionality with vintage charm.
-              </p>
-              
-              <p className="text-zinc-600 mb-6">
-                The result was a stunning kitchen featuring custom shaker cabinets, quartz countertops, and state-of-the-art appliances that meet their modern needs while honoring the home's architectural style.
-              </p>
-              
-              <Link
-                href="/portfolio/wilson-family-kitchen"
-                className="flex items-center text-zinc-900 font-medium hover:text-brass-700 transition-colors"
-              >
-                View This Project
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="ml-1 h-4 w-4">
-                  <path d="M5 12h14"></path>
-                  <path d="m12 5 7 7-7 7"></path>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
+            {testimonials.map((testimonial) => (
+              <div key={testimonial.id} className="bg-white p-8 border border-zinc-200 hover:border-zinc-300 transition-colors">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="mb-4 h-10 w-10 text-brass-200">
+                  <path d="M3 21c3 0 7-1 7-8V5c0-1.25-.756-2.017-2-2H4c-1.25 0-2 .75-2 1.972V11c0 1.25.75 2 2 2 1 0 1 0 1 1v1c0 1-1 2-2 2s-1 .008-1 1.031V20c0 1 0 1 1 1z"></path>
+                  <path d="M15 21c3 0 7-1 7-8V5c0-1.25-.757-2.017-2-2h-4c-1.25 0-2 .75-2 1.972V11c0 1.25.75 2 2 2h.75c0 2.25.25 4-2.75 4v3c0 1 0 1 1 1z"></path>
                 </svg>
-              </Link>
-            </div>
+                
+                <blockquote className="text-lg mb-6 text-zinc-700 leading-relaxed">
+                  "{testimonial.text}"
+                </blockquote>
+                
+                <div className="flex items-center">
+                  <div className="flex-1">
+                    <p className="font-medium">{testimonial.name}</p>
+                    {testimonial.title && (
+                      <p className="text-zinc-600">{testimonial.title}</p>
+                    )}
+                    <p className="text-zinc-500">{testimonial.location}</p>
+                  </div>
+                </div>
+              </div>
+            ))}
           </div>
         </div>
       </section>
@@ -249,18 +136,18 @@ export default function TestimonialsPage() {
         <div className="container mx-auto px-4 max-w-3xl text-center">
           <h2 className="text-3xl font-serif mb-6">Ready to Start Your Project?</h2>
           <p className="text-lg text-zinc-300 mb-8">
-            Join our growing list of satisfied clients and transform your home with our expert design and craftsmanship.
+            Our expert designers are ready to help you create the kitchen or bathroom of your dreams.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link
-              href="/portfolio"
-              className="px-8 py-3 bg-white text-zinc-900 rounded-md hover:bg-zinc-100 transition-colors"
+              href="/start-planning"
+              className="px-8 py-3 bg-white text-zinc-900 hover:bg-zinc-100 transition-colors"
             >
-              Browse Our Portfolio
+              Start Planning
             </Link>
             <Link
               href="/contact"
-              className="px-8 py-3 border border-white text-white rounded-md hover:bg-white/10 transition-colors"
+              className="px-8 py-3 border border-white text-white hover:bg-white/10 transition-colors"
             >
               Contact Us
             </Link>
