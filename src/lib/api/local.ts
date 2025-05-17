@@ -14,7 +14,7 @@ const mockProducts: Product[] = [
     title: 'Modern Brass Kitchen Faucet',
     handle: 'modern-brass-kitchen-faucet',
     price: 249.99,
-    images: ['/mock/kitchens/kitchen-1.jpg'],
+    images: ['/images/products/kitchen-1.jpg'],
     description: 'Elegant brass pull-down faucet with spot-resistant finish. Features a high-arc spout and single-handle design for easy operation. The pull-down spray head offers multiple spray patterns for versatile cleaning.',
     category: 'kitchen'
   },
@@ -23,7 +23,7 @@ const mockProducts: Product[] = [
     title: 'Marble Waterfall Island Countertop',
     handle: 'marble-waterfall-island-countertop',
     price: 3499.99,
-    images: ['/mock/kitchens/kitchen-2.jpg'],
+    images: ['/images/products/kitchen-2.jpg'],
     description: 'Luxurious Carrara marble waterfall edge countertop for kitchen islands. Each piece is unique with natural veining and patterns. Includes professional templating and installation.',
     category: 'kitchen'
   },
@@ -32,7 +32,7 @@ const mockProducts: Product[] = [
     title: 'Matte Black Bathroom Fixtures Set',
     handle: 'matte-black-bathroom-fixtures-set',
     price: 599.99,
-    images: ['/mock/baths/bath-1.jpg'],
+    images: ['/images/products/bath-1.jpg'],
     description: 'Complete set including faucet, shower head, and accessories in trendy matte black. The modern design adds a touch of sophistication to any bathroom. Corrosion-resistant finish ensures long-lasting beauty.',
     category: 'bath'
   },
@@ -200,11 +200,11 @@ const mockProjects: PortfolioProject[] = [
     date: '2024-12-10',
     category: 'kitchen',
     images: [
-      '/mock/kitchens/kitchen-1.jpg',
-      '/mock/kitchens/kitchen-2.jpg',
-      '/mock/kitchens/kitchen-3.jpg',
-      '/mock/kitchens/kitchen-5.jpg',
-      '/mock/kitchens/kitchen-7.jpg'
+      '/images/portfolio/project-1.jpg',
+      '/images/portfolio/project-3.jpg',
+      '/images/portfolio/project-5.jpg',
+      '/images/home/featured-1.jpg',
+      '/images/home/featured-2.jpg'
     ],
     description: 'Complete remodel of a 1930s farmhouse kitchen featuring custom cabinetry, quartz countertops, and vintage-inspired fixtures with modern functionality.\n\nThis project involved removing a wall to create an open concept layout connecting the kitchen to the dining area. The original hardwood floors were restored and extended throughout the space, while custom cabinetry in a classic sage green provides ample storage without overwhelming the room.\n\nThe large center island features a waterfall edge quartz countertop and provides additional seating and prep space. Modern appliances were integrated into the design while maintaining the home\'s historic character.',
     features: [
@@ -229,11 +229,11 @@ const mockProjects: PortfolioProject[] = [
     date: '2024-11-15',
     category: 'bath',
     images: [
-      '/mock/baths/bath-1.jpg',
-      '/mock/baths/bath-2.jpg',
-      '/mock/baths/bath-3.jpg',
-      '/mock/baths/bath-5.jpg',
-      '/mock/baths/bath-6.jpg'
+      '/images/portfolio/project-2.jpg',
+      '/images/portfolio/project-4.jpg',
+      '/images/portfolio/project-6.jpg',
+      '/images/home/featured-3.jpg',
+      '/images/home/portfolio-1.jpg'
     ],
     description: 'Luxurious primary bathroom renovation inspired by high-end spa retreats. Features include a freestanding soaking tub, zero-entry shower, and custom vanity with integrated lighting.\n\nThis complete bathroom transformation converted an outdated bathroom into a personal spa retreat. The project began by reconfiguring the layout to maximize space and improve flow.\n\nThe centerpiece is a stunning freestanding oval tub positioned beneath a new skylight. The zero-entry curbless shower features multiple shower heads and a built-in bench. Heated marble floors and a programmable thermostat ensure comfort year-round.\n\nThe custom floating vanity includes soft-close drawers, integrated LED lighting, and his-and-hers sinks with wall-mounted faucets.',
     features: [
@@ -248,65 +248,63 @@ const mockProjects: PortfolioProject[] = [
     ],
     testimonial: {
       quote: 'Our bathroom feels like a luxury spa retreat. The attention to detail and craftsmanship exceeded our expectations. The team at NBKB was professional, responsive, and made the process enjoyable.',
-      author: 'Mark & Jennifer W.'
+      author: 'Michael & Sarah T.'
     }
   },
   {
     id: 'proj_3',
-    title: 'Sonoma Contemporary Kitchen',
-    slug: 'sonoma-contemporary-kitchen',
-    date: '2024-09-22',
+    title: 'Sonoma County Cottage',
+    slug: 'sonoma-county-cottage',
+    date: '2024-10-01',
     category: 'kitchen',
     images: [
-      '/mock/kitchens/kitchen-4.jpg',
-      '/mock/kitchens/kitchen-6.jpg',
-      '/mock/kitchens/kitchen-8.jpg',
-      '/mock/kitchens/kitchen-2.jpg',
-      '/mock/kitchens/kitchen-7.jpg'
+      '/images/home/hero-2.jpg',
+      '/images/home/hero-3.jpg',
+      '/images/portfolio/project-1.jpg',
+      '/images/portfolio/project-3.jpg'
     ],
-    description: 'Modern kitchen renovation in a Sonoma County vineyard estate featuring clean lines, high-end appliances, and a stunning center island with waterfall edge countertop.\n\nThis project transformed a dated kitchen into a chef\'s dream with professional-grade appliances and custom cabinetry. The open layout creates a seamless flow between cooking and entertaining spaces.\n\nThe dramatic waterfall island serves as both a functional workspace and visual centerpiece. Full-height cabinets maximize storage, while integrated lighting highlights the custom backsplash and architectural details.\n\nOversize windows were installed to frame vineyard views and bring natural light into the space. Smart home technology allows control of lighting, music, and appliances from a single interface.',
+    description: 'Complete kitchen renovation in a charming 1940s cottage. The design preserves the home\'s vintage character while introducing modern functionality and improved layout.\n\nThis project focused on creating a bright, airy kitchen within the constraints of the existing cottage footprint. We reconfigured the layout to create better workflow and added a small breakfast nook by the window.\n\nLight, painted cabinetry, open shelving, and a subway tile backsplash maintain the cottage aesthetic, while high-end appliances and quartz countertops add modern convenience. The original wood floors were refinished to complement the design.',
     features: [
-      'Custom flat-panel cabinetry in matte white',
-      'Marble waterfall island with seating for six',
-      'Professional-grade stainless steel appliances',
-      'Full-height backsplash in marble slab',
-      'Integrated smart home technology',
-      'Oversized picture windows with vineyard views',
-      'Custom lighting plan with recessed and pendant fixtures',
-      'Wine refrigeration and storage'
+      'Custom painted cabinetry',
+      'Quartz countertops',
+      'Farmhouse sink with bridge faucet',
+      'Open shelving with custom brackets',
+      'Integrated appliances',
+      'Hexagon floor tile in mudroom',
+      'Custom built breakfast nook',
+      'Articulating sconce lighting'
     ],
     testimonial: {
-      quote: 'NBKB delivered exactly what we envisioned - a sophisticated, highly functional kitchen that\'s perfect for both serious cooking and entertaining. The attention to detail is exceptional, and the quality of craftsmanship is evident in every aspect of the design.',
-      author: 'Robert & Elaine T.'
+      quote: 'I wanted to update my kitchen without losing the charm of my cottage. The NBKB team listened to my concerns and designed a space that feels both vintage and current. It\'s now my favorite room in the house!',
+      author: 'Elizabeth M.'
     }
   },
   {
     id: 'proj_4',
-    title: 'Petaluma Master Bath Transformation',
-    slug: 'petaluma-master-bath-transformation',
-    date: '2024-08-05',
-    category: 'bath',
+    title: 'Sebastopol Family Kitchen',
+    slug: 'sebastopol-family-kitchen',
+    date: '2024-09-15',
+    category: 'kitchen',
     images: [
-      '/mock/baths/bath-4.jpg',
-      '/mock/baths/bath-7.jpg',
-      '/mock/baths/bath-8.jpg',
-      '/mock/baths/bath-2.jpg',
-      '/mock/baths/bath-5.jpg'
+      '/images/portfolio/project-2.jpg',
+      '/images/portfolio/project-4.jpg',
+      '/images/portfolio/project-5.jpg',
+      '/images/portfolio/project-6.jpg'
     ],
-    description: 'Complete renovation of a primary bathroom in a Petaluma Victorian home, balancing historical charm with modern luxury and technology.\n\nThis project carefully preserved the home\'s Victorian character while introducing modern amenities and comfort. Period-appropriate details like claw-foot tub, vintage-inspired fixtures, and custom millwork honor the home\'s heritage.\n\nThe shower features handmade subway tile in a traditional pattern with modern conveniences like digital temperature control and multiple spray heads. The custom vanity was designed to resemble antique furniture while providing modern storage solutions.\n\nCareful attention was paid to historical accuracy in finishes and hardware, while hidden technology provides modern convenience.',
+    description: 'Family-focused kitchen remodel with emphasis on durable materials, ample storage, and multi-functional spaces. The spacious design accommodates multiple cooks and encourages family gatherings.\n\nThis project transformed a compartmentalized, outdated kitchen into an open-concept heart of the home. The expanded layout includes a large island with seating for four, a dedicated homework/craft station, and a beverage center.\n\nDurable quartz countertops, porcelain tile flooring, and easy-clean cabinet finishes ensure the space can withstand the demands of a busy family. The warm color palette and natural wood accents create an inviting atmosphere for daily meals and entertaining.',
     features: [
-      'Restored clawfoot tub with modern plumbing',
-      'Custom shower with handmade subway tile',
-      'Marble mosaic floor in traditional pattern',
-      'Furniture-style vanity with marble top',
-      'Period-appropriate fixtures and hardware',
-      'Concealed modern technology and conveniences',
-      'Heated floors with discreet controls',
-      'Custom millwork and trim details'
+      'Large central island with seating',
+      'Custom storage solutions',
+      'Dedicated homework/craft area',
+      'Beverage center with wine refrigerator',
+      'Pot filler over range',
+      'Porcelain tile flooring',
+      'Double wall ovens',
+      'Pantry with custom organization'
     ],
     testimonial: {
-      quote: 'NBKB masterfully balanced our desire to respect the historic character of our Victorian home while creating a bathroom with all the modern amenities we wanted. Their knowledge of period-appropriate design and materials was invaluable.',
-      author: 'Stephen & Catherine D.'
+      quote: 'As a family with three kids, we needed a kitchen that works for meal prep, homework, and entertaining. This remodel has transformed how we live in our home. The attention to storage and workflow has made daily life so much easier.',
+      author: 'The Abrams Family'
     }
   },
   {

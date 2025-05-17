@@ -24,7 +24,7 @@ interface InstagramGalleryProps {
 
 export default function InstagramGallery({ 
   limit = 6, 
-  username = 'nbkbdesigncenter',
+  username = 'northbay_kitchen_and_bath',
   showCaption = false,
   showUsername = true,
   showFollowButton = true

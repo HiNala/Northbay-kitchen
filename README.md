@@ -1,90 +1,135 @@
-# Northbay Kitchen & Bath Design Center (NBKB)
+# Northbay Kitchen & Bath - Website
 
 A mobile-first, headless-Shopify demo site showcasing NBKB's high-end kitchen & bath remodel expertise. This project mirrors the aesthetic of Studio McGee and can be connected to a live Shopify store via a simple environment flag change.
 
 ## Features
 
-- Mobile-first, responsive design (320px to 1920px)
+- React 18, Server Components
+- Next.js 15 App Router
 - Headless Shopify integration
-- High-performance React components
-- Accessible UI (WCAG 2.2 AA compliant)
-- Modern editorial style with brass-accent palette
-- Instagram gallery integration
-- Animated testimonials section
-- Portfolio gallery with image lightbox
-- Complete checkout simulation
+- Responsive design with TailwindCSS
+- Mobile-first approach
+- Cart functionality
+- Real testimonials from actual clients
+- Dynamic portfolio showcase
+- Animated page transitions
 
 ## Tech Stack
 
-- **Frontend**: Next.js 15 (React 19 App Router), TypeScript
-- **Styling**: TailwindCSS + shadcn/ui
-- **Motion**: Framer Motion
+- **Framework**: Next.js 15
+- **Rendering**: Server Components, SSR, ISR
+- **Styling**: TailwindCSS
 - **Data**: Switchboard data layer (`local.ts` vs `shopify.ts`)
 - **Headless Commerce**: Shopify Storefront API (GraphQL)
-- **Content**: Contentlayer (MDX)
-- **Hosting**: Vercel
+- **Deployment**: Vercel / Netlify / Any hosting platform
+- **Authentication**: None (public-facing site)
 
-## Getting Started
+## Project Structure
 
-```bash
-# Install dependencies
-npm install
+- `src/app/*` - Next.js app router pages
+- `src/components/*` - Reusable React components
+- `src/lib/*` - Utility functions, API handlers, etc.
+- `src/lib/api/*` - Data layer (local mock data and Shopify connectors)
+- `public/*` - Static assets (images, fonts, etc.)
 
-# Run development server
-npm run dev
+## Development
 
-# Build for production
-npm run build
+1. Clone the repository
+2. Install dependencies with `npm install`
+3. Run the development server with `npm run dev`
+4. Open [http://localhost:3000](http://localhost:3000) in your browser
 
-# Start production server
-npm run start
-```
-
-## Environment Configuration
+## Shopify Integration
 
 The application uses a switchboard data layer to toggle between local mock data and the Shopify API:
 
-```
-# Use local mock data
+```bash
+# Use local mock data (default)
 NEXT_PUBLIC_BACKEND=local
 
 # Use live Shopify data
 NEXT_PUBLIC_BACKEND=shopify
 ```
 
-## Project Structure
+### Setting up Shopify Integration
 
-- `/src/app/*` - Next.js App Router pages
-- `/src/components` - Reusable UI components
-  - `/src/components/ui` - Basic UI components
-  - `/src/components/layout` - Layout components like headers, footers
-- `/src/lib/api` - Data fetching layer
-- `/src/lib/context` - Context providers (Cart, Auth)
-- `/src/content` - MDX content
-- `/public/mock` - Mock images for development
-- `/scripts` - Utility scripts for development
+To connect the site to a Shopify store, follow these steps:
 
-## New Features
+1. **Create a Shopify store**
+   - If you don't have one, sign up at [Shopify](https://www.shopify.com/)
+   - Set up your products, collections, and store information
 
-### 1. Instagram Gallery
-- Instagram-like gallery on homepage and dedicated page
-- Responsive grid layout optimized for all devices
+2. **Create a Custom App in Shopify**
+   - Go to your Shopify admin panel
+   - Navigate to Apps > Develop apps > Create an app
+   - Name your app (e.g. "NBKB Headless")
+   - Set the app URL to your website's URL
+   - Go to "Configuration" and select the Storefront API
+   - Configure the Storefront API scopes, make sure to include:
+     - `unauthenticated_read_product_listings`
+     - `unauthenticated_read_product_inventory`
+     - `unauthenticated_read_product_tags`
+     - `unauthenticated_read_product_pickup_locations`
+     - `unauthenticated_read_selling_plans`
+     - `unauthenticated_write_checkouts`
+     - `unauthenticated_read_checkouts`
+     - `unauthenticated_write_customers`
 
-### 2. Portfolio Lightbox
-- Interactive image gallery for portfolio projects
-- Lightbox with keyboard navigation and touch gestures
-- Smooth animations with Framer Motion
+3. **Get API credentials**
+   - After creating the app, you'll receive an API key and API secret key
+   - In the Storefront API section, create a new access token
+   - Save the Storefront API access token securely
 
-### 3. Enhanced Testimonials
-- Animated testimonial slider 
-- Client testimonials from actual NBKB customers
-- Studio McGee inspired design elements
+4. **Configure environment variables**
+   - Create or update your `.env.local` file with the following variables:
+   ```
+   NEXT_PUBLIC_BACKEND=shopify
+   SHOPIFY_STOREFRONT_API_ENDPOINT=https://your-store-name.myshopify.com/api/2023-10/graphql.json
+   SHOPIFY_STOREFRONT_API_TOKEN=your_storefront_api_token
+   ```
 
-### 4. Improved Contact Page
-- Updated contact form with proper validation
-- Google Maps integration
-- Clear contact information display
+5. **Restart your development server**
+   - Run `npm run dev` to apply the new environment variables
 
-## License
+6. **Test the integration**
+   - Visit your site and verify that product data is being pulled from Shopify
+   - Test the cart functionality to ensure it's working with Shopify
 
-[MIT](LICENSE)
+### Shopify Data Structure
+
+The site expects the following data structure in Shopify:
+
+1. **Products**: Standard Shopify products with:
+   - Title, description, images
+   - Variants (if applicable)
+   - Price information
+   - Product type (used for categorization)
+   - Tags (used for filtering)
+
+2. **Collections**: Used for organizing products by category
+   - "Kitchen" collection for kitchen products
+   - "Bath" collection for bathroom products
+
+3. **Metafields**: For additional data like:
+   - Portfolio projects (can be stored as metafields on products or collections)
+   - Testimonials (can be stored as metafields or as products in a hidden collection)
+
+## Deployment
+
+This project can be deployed to any hosting platform that supports Next.js, such as Vercel, Netlify, or your own server:
+
+1. Configure your build settings:
+   - Build command: `npm run build`
+   - Output directory: `.next`
+
+2. Set up environment variables on your hosting platform
+   - Don't forget to add the Shopify API credentials
+
+3. Deploy your site
+   - Follow your hosting platform's instructions for deployment
+
+## Credits
+
+- Design inspiration: Studio McGee
+- Development: Custom development for Northbay Kitchen & Bath
+- Images: Northbay Kitchen & Bath Design Center

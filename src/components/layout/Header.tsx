@@ -26,6 +26,12 @@ export default function Header() {
             {/* Desktop Navigation */}
             <nav className="hidden md:flex space-x-8">
               <Link 
+                href="/" 
+                className="text-zinc-600 hover:text-zinc-900 transition-colors"
+              >
+                Home
+              </Link>
+              <Link 
                 href="/portfolio" 
                 className="text-zinc-600 hover:text-zinc-900 transition-colors"
               >
@@ -109,6 +115,13 @@ export default function Header() {
         {isMobileMenuOpen && (
           <div className="md:hidden bg-white border-t border-zinc-100">
             <nav className="flex flex-col p-4 space-y-4">
+              <Link 
+                href="/" 
+                className="text-zinc-600 hover:text-zinc-900 transition-colors"
+                onClick={() => setIsMobileMenuOpen(false)}
+              >
+                Home
+              </Link>
               <Link 
                 href="/portfolio" 
                 className="text-zinc-600 hover:text-zinc-900 transition-colors"

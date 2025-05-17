@@ -1,6 +1,8 @@
 import { Metadata } from 'next';
 import Link from 'next/link';
 import Image from 'next/image';
+import { Button } from '@/components/ui/Button';
+import PageHeader from '@/components/ui/PageHeader';
 
 export const metadata: Metadata = {
   title: 'Start Planning | Northbay Kitchen & Bath',
@@ -11,14 +13,10 @@ export default function StartPlanningPage() {
   return (
     <main className="flex min-h-screen flex-col">
       {/* Hero Section */}
-      <section className="w-full bg-zinc-100 py-16 md:py-24">
-        <div className="container mx-auto px-4 text-center">
-          <h1 className="text-4xl md:text-5xl font-serif mb-6">Start Planning Your Project</h1>
-          <p className="text-lg text-zinc-600 max-w-2xl mx-auto">
-            Let us guide you through the process of transforming your kitchen or bathroom into the space of your dreams.
-          </p>
-        </div>
-      </section>
+      <PageHeader
+        title="Start Planning Your Project"
+        subtitle="Let us guide you through the process of transforming your kitchen or bathroom into the space of your dreams."
+      />
 
       {/* Our Process */}
       <section className="w-full py-16">
@@ -28,10 +26,14 @@ export default function StartPlanningPage() {
           <div className="space-y-16">
             {/* Step 1 */}
             <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-              <div className="aspect-[4/3] bg-zinc-200 rounded-lg overflow-hidden md:order-1">
-                {/* Placeholder for process image */}
-                <div className="w-full h-full flex items-center justify-center">
-                  <p className="text-zinc-500 text-sm">Consultation Image</p>
+              <div className="aspect-[4/3] rounded-lg overflow-hidden shadow-md md:order-1">
+                <div className="w-full h-full relative">
+                  <Image
+                    src="/images/portfolio/kitchen-1.jpg"
+                    alt="Designer consultation with client"
+                    fill
+                    className="object-cover"
+                  />
                 </div>
               </div>
               <div>
@@ -54,10 +56,14 @@ export default function StartPlanningPage() {
             
             {/* Step 2 */}
             <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-              <div className="aspect-[4/3] bg-zinc-200 rounded-lg overflow-hidden">
-                {/* Placeholder for process image */}
-                <div className="w-full h-full flex items-center justify-center">
-                  <p className="text-zinc-500 text-sm">Design Image</p>
+              <div className="aspect-[4/3] rounded-lg overflow-hidden shadow-md">
+                <div className="w-full h-full relative">
+                  <Image
+                    src="/images/portfolio/kitchen-2.jpg"
+                    alt="3D kitchen design rendering"
+                    fill
+                    className="object-cover"
+                  />
                 </div>
               </div>
               <div>
@@ -80,10 +86,14 @@ export default function StartPlanningPage() {
             
             {/* Step 3 */}
             <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-              <div className="aspect-[4/3] bg-zinc-200 rounded-lg overflow-hidden md:order-1">
-                {/* Placeholder for process image */}
-                <div className="w-full h-full flex items-center justify-center">
-                  <p className="text-zinc-500 text-sm">Proposal Image</p>
+              <div className="aspect-[4/3] rounded-lg overflow-hidden shadow-md md:order-1">
+                <div className="w-full h-full relative">
+                  <Image
+                    src="/images/portfolio/kitchen-3.jpg"
+                    alt="Kitchen design proposal and materials"
+                    fill
+                    className="object-cover"
+                  />
                 </div>
               </div>
               <div>
@@ -106,10 +116,14 @@ export default function StartPlanningPage() {
             
             {/* Step 4 */}
             <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-              <div className="aspect-[4/3] bg-zinc-200 rounded-lg overflow-hidden">
-                {/* Placeholder for process image */}
-                <div className="w-full h-full flex items-center justify-center">
-                  <p className="text-zinc-500 text-sm">Construction Image</p>
+              <div className="aspect-[4/3] rounded-lg overflow-hidden shadow-md">
+                <div className="w-full h-full relative">
+                  <Image
+                    src="/images/portfolio/kitchen-4.jpg"
+                    alt="Kitchen remodel construction in progress"
+                    fill
+                    className="object-cover"
+                  />
                 </div>
               </div>
               <div>
@@ -132,10 +146,14 @@ export default function StartPlanningPage() {
             
             {/* Step 5 */}
             <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-              <div className="aspect-[4/3] bg-zinc-200 rounded-lg overflow-hidden md:order-1">
-                {/* Placeholder for process image */}
-                <div className="w-full h-full flex items-center justify-center">
-                  <p className="text-zinc-500 text-sm">Completion Image</p>
+              <div className="aspect-[4/3] rounded-lg overflow-hidden shadow-md md:order-1">
+                <div className="w-full h-full relative">
+                  <Image
+                    src="/images/portfolio/kitchen-5.jpg"
+                    alt="Completed kitchen renovation"
+                    fill
+                    className="object-cover"
+                  />
                 </div>
               </div>
               <div>
@@ -254,12 +272,14 @@ export default function StartPlanningPage() {
                 </div>
                 
                 <div>
-                  <button
+                  <Button
                     type="submit"
-                    className="w-full px-6 py-3 bg-zinc-900 text-white rounded-md hover:bg-zinc-800 transition-colors"
+                    variant="primary"
+                    size="lg"
+                    className="w-full"
                   >
                     Book Consultation
-                  </button>
+                  </Button>
                 </div>
               </form>
             </div>
@@ -317,12 +337,13 @@ export default function StartPlanningPage() {
           <p className="text-lg text-zinc-300 mb-8">
             Take the first step towards your dream kitchen or bathroom by booking a consultation today.
           </p>
-          <Link
+          <Button
             href="/contact"
-            className="px-8 py-3 bg-white text-zinc-900 rounded-md hover:bg-zinc-100 transition-colors inline-block"
+            variant="white"
+            size="lg"
           >
             Contact Us
-          </Link>
+          </Button>
         </div>
       </section>
     </main>
