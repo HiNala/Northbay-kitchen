@@ -12,7 +12,7 @@ export default function Home() {
           <div className="absolute inset-0 bg-black/30 z-10"></div>
           <div className="w-full h-full relative">
             <Image 
-              src="/mock/kitchens/kitchen-4.jpg"
+              src="/mock/hero/hero-1.jpg"
               alt="Northbay Kitchen & Bath - Beautiful kitchen design"
               fill
               priority
@@ -62,7 +62,7 @@ export default function Home() {
               <div className="aspect-[4/3] mb-4 overflow-hidden rounded-md">
                 <div className="w-full h-full relative">
                   <Image 
-                    src="/mock/kitchens/kitchen-1.jpg"
+                    src="/mock/hero/hero-2.jpg"
                     alt="Santa Rosa Modern Farmhouse Kitchen"
                     fill
                     className="object-cover transition-transform duration-300 group-hover:scale-105"
@@ -89,7 +89,7 @@ export default function Home() {
               <div className="aspect-[4/3] mb-4 overflow-hidden rounded-md">
                 <div className="w-full h-full relative">
                   <Image 
-                    src="/mock/baths/bath-1.jpg"
+                    src="/mock/hero/hero-3.jpg"
                     alt="Healdsburg Spa Retreat"
                     fill
                     className="object-cover transition-transform duration-300 group-hover:scale-105"
@@ -116,7 +116,7 @@ export default function Home() {
               <div className="aspect-[4/3] mb-4 overflow-hidden rounded-md">
                 <div className="w-full h-full relative">
                   <Image 
-                    src="/mock/kitchens/kitchen-6.jpg"
+                    src="/mock/hero/hero-4.jpg"
                     alt="Sonoma County Cottage"
                     fill
                     className="object-cover transition-transform duration-300 group-hover:scale-105"

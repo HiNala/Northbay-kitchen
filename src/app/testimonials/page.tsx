@@ -86,11 +86,6 @@ export default function TestimonialsPage() {
       <section className="w-full py-16 bg-zinc-50">
         <div className="container mx-auto px-4 max-w-4xl">
           <div className="text-center mb-16">
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="mx-auto mb-4 h-12 w-12 text-zinc-300">
-              <path d="M3 21c3 0 7-1 7-8V5c0-1.25-.756-2.017-2-2H4c-1.25 0-2 .75-2 1.972V11c0 1.25.75 2 2 2 1 0 1 0 1 1v1c0 1-1 2-2 2s-1 .008-1 1.031V20c0 1 0 1 1 1z"></path>
-              <path d="M15 21c3 0 7-1 7-8V5c0-1.25-.757-2.017-2-2h-4c-1.25 0-2 .75-2 1.972V11c0 1.25.75 2 2 2h.75c0 2.25.25 4-2.75 4v3c0 1 0 1 1 1z"></path>
-            </svg>
-            
             <blockquote className="text-2xl md:text-3xl mb-8 font-light italic text-zinc-700">
               "Our team was able to design our dream kitchen with Northbay's expertise. The attention to detail and quality materials exceeded our expectations!"
             </blockquote>
@@ -107,11 +102,6 @@ export default function TestimonialsPage() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
             {testimonials.map((testimonial) => (
               <div key={testimonial.id} className="bg-white p-8 border border-zinc-200 hover:border-zinc-300 transition-colors">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="mb-4 h-10 w-10 text-brass-200">
-                  <path d="M3 21c3 0 7-1 7-8V5c0-1.25-.756-2.017-2-2H4c-1.25 0-2 .75-2 1.972V11c0 1.25.75 2 2 2 1 0 1 0 1 1v1c0 1-1 2-2 2s-1 .008-1 1.031V20c0 1 0 1 1 1z"></path>
-                  <path d="M15 21c3 0 7-1 7-8V5c0-1.25-.757-2.017-2-2h-4c-1.25 0-2 .75-2 1.972V11c0 1.25.75 2 2 2h.75c0 2.25.25 4-2.75 4v3c0 1 0 1 1 1z"></path>
-                </svg>
-                
                 <blockquote className="text-lg mb-6 text-zinc-700 leading-relaxed">
                   "{testimonial.text}"
                 </blockquote>
