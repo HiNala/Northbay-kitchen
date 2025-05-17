@@ -23,15 +23,6 @@ export default function CartDrawer({ isOpen, onClose }: CartDrawerProps) {
     removeFromCart(itemId);
   };
 
-  const handleCheckout = async () => {
-    try {
-      const checkoutUrl = await getCheckoutUrl();
-      window.location.href = checkoutUrl;
-    } catch (error) {
-      console.error('Error getting checkout URL:', error);
-    }
-  };
-
   return (
     <div 
       className={`fixed inset-0 z-50 transition-opacity duration-300 ${
@@ -161,12 +152,13 @@ export default function CartDrawer({ isOpen, onClose }: CartDrawerProps) {
             <p className="text-sm text-zinc-500 mb-4">
               Shipping and taxes calculated at checkout.
             </p>
-            <button
-              onClick={handleCheckout}
-              className="w-full py-3 px-4 bg-zinc-900 hover:bg-zinc-800 text-white rounded-md transition-colors"
+            <Link
+              href="/checkout"
+              onClick={onClose}
+              className="w-full py-3 px-4 bg-zinc-900 hover:bg-zinc-800 text-white rounded-md transition-colors block text-center"
             >
               {isLoading ? 'Loading...' : 'Checkout'}
-            </button>
+            </Link>
             <div className="mt-3 flex justify-center">
               <button
                 type="button"

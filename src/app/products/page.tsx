@@ -17,7 +17,8 @@ export default async function ProductsPage() {
       {/* Hero Section */}
       <section className="w-full bg-zinc-100 py-16 md:py-24">
         <div className="container mx-auto px-4 text-center">
-          <h1 className="text-4xl md:text-5xl font-serif mb-6">Our Products</h1>
+          <h1 className="text-4xl md:text-5xl font-serif mb-4">Our Products</h1>
+          <div className="w-16 h-0.5 bg-zinc-300 mx-auto mb-6"></div>
           <p className="text-lg text-zinc-600 max-w-2xl mx-auto">
             Browse our selection of high-quality products for your kitchen and bathroom renovation projects.
           </p>
@@ -27,8 +28,8 @@ export default async function ProductsPage() {
       {/* Products Grid */}
       <section className="w-full py-16">
         <div className="container mx-auto px-4">
-          <div className="flex justify-between items-center mb-8">
-            <h2 className="text-2xl font-medium">All Products</h2>
+          <div className="flex justify-between items-center mb-10">
+            <h2 className="text-2xl font-serif">All Products</h2>
             <div className="flex items-center space-x-2">
               <span className="text-zinc-500">{products.length} products</span>
             </div>
@@ -61,8 +62,8 @@ export default async function ProductsPage() {
                         </div>
                       )}
                     </div>
-                    <h3 className="text-lg font-medium mb-1">{product.title}</h3>
-                    <p className="text-zinc-900">${product.price.toFixed(2)}</p>
+                    <h3 className="text-lg font-medium mb-1 group-hover:text-zinc-700">{product.title}</h3>
+                    <p className="text-zinc-900 font-medium">${product.price.toFixed(2)}</p>
                   </Link>
                 </div>
               ))}
@@ -72,15 +73,16 @@ export default async function ProductsPage() {
       </section>
 
       {/* CTA Section */}
-      <section className="w-full py-16 bg-zinc-100">
+      <section className="w-full py-20 bg-zinc-100">
         <div className="container mx-auto px-4 max-w-3xl text-center">
-          <h2 className="text-3xl font-serif mb-6">Need Help Choosing?</h2>
-          <p className="text-lg text-zinc-600 mb-8">
+          <h2 className="text-3xl font-serif mb-4">Need Help Choosing?</h2>
+          <div className="w-16 h-0.5 bg-zinc-300 mx-auto mb-6"></div>
+          <p className="text-lg text-zinc-600 mb-10">
             Our design experts can help you select the perfect products for your renovation project.
           </p>
           <Link
             href="/contact"
-            className="px-8 py-3 bg-zinc-900 text-white rounded-md hover:bg-zinc-800 transition-colors inline-block"
+            className="px-10 py-4 bg-zinc-900 text-white hover:bg-zinc-800 transition-colors inline-block"
           >
             Schedule a Consultation
           </Link>
