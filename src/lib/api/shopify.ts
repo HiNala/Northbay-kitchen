@@ -6,7 +6,6 @@
  */
 
 import { Product, PortfolioProject, Cart, CartItem } from './types';
-import { useShopifyCart } from '@shopify/hydrogen-react';
 
 // Note: This is a simplified implementation that will need to be
 // expanded with actual Shopify Storefront API calls when credentials

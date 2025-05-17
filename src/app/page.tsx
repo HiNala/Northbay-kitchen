@@ -9,10 +9,15 @@ export default function Home() {
         <div className="absolute inset-0 z-0">
           <div className="absolute inset-0 bg-black/40 z-10"></div>
           <div className="w-full h-full relative">
-            {/* Placeholder for hero image - will be replaced with actual images */}
-            <div className="w-full h-full bg-zinc-200 flex items-center justify-center">
-              <p className="text-zinc-500 text-sm">Hero Image Placeholder</p>
-            </div>
+            {/* Hero image */}
+            <Image 
+              src="/mock/kitchens/kitchen-4.jpg"
+              alt="Northbay Kitchen & Bath - Beautiful kitchen design"
+              fill
+              priority
+              className="object-cover"
+              sizes="100vw"
+            />
           </div>
         </div>
         
@@ -49,9 +54,15 @@ export default function Home() {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {/* Project Card 1 */}
             <div className="group">
-              <div className="aspect-[4/3] bg-zinc-200 mb-4 overflow-hidden">
-                <div className="w-full h-full flex items-center justify-center">
-                  <p className="text-zinc-500 text-sm">Project Image Placeholder</p>
+              <div className="aspect-[4/3] mb-4 overflow-hidden rounded-md">
+                <div className="w-full h-full relative">
+                  <Image 
+                    src="/mock/kitchens/kitchen-1.jpg"
+                    alt="Santa Rosa Modern Farmhouse Kitchen"
+                    fill
+                    className="object-cover transition-transform duration-300 group-hover:scale-105"
+                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                  />
                 </div>
               </div>
               <h3 className="text-xl font-medium mb-2">Santa Rosa Modern Farmhouse</h3>
@@ -70,9 +81,15 @@ export default function Home() {
 
             {/* Project Card 2 */}
             <div className="group">
-              <div className="aspect-[4/3] bg-zinc-200 mb-4 overflow-hidden">
-                <div className="w-full h-full flex items-center justify-center">
-                  <p className="text-zinc-500 text-sm">Project Image Placeholder</p>
+              <div className="aspect-[4/3] mb-4 overflow-hidden rounded-md">
+                <div className="w-full h-full relative">
+                  <Image 
+                    src="/mock/baths/bath-1.jpg"
+                    alt="Healdsburg Spa Retreat"
+                    fill
+                    className="object-cover transition-transform duration-300 group-hover:scale-105"
+                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                  />
                 </div>
               </div>
               <h3 className="text-xl font-medium mb-2">Healdsburg Spa Retreat</h3>
@@ -91,9 +108,15 @@ export default function Home() {
 
             {/* Project Card 3 */}
             <div className="group">
-              <div className="aspect-[4/3] bg-zinc-200 mb-4 overflow-hidden">
-                <div className="w-full h-full flex items-center justify-center">
-                  <p className="text-zinc-500 text-sm">Project Image Placeholder</p>
+              <div className="aspect-[4/3] mb-4 overflow-hidden rounded-md">
+                <div className="w-full h-full relative">
+                  <Image 
+                    src="/mock/kitchens/kitchen-6.jpg"
+                    alt="Sonoma County Cottage"
+                    fill
+                    className="object-cover transition-transform duration-300 group-hover:scale-105"
+                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                  />
                 </div>
               </div>
               <h3 className="text-xl font-medium mb-2">Sonoma County Cottage</h3>
@@ -187,8 +210,21 @@ export default function Home() {
       </section>
 
       {/* Testimonial Section */}
-      <section className="w-full py-16 bg-zinc-900 text-white">
-        <div className="container mx-auto px-4 max-w-4xl">
+      <section className="w-full py-16 bg-zinc-900 text-white relative">
+        <div className="absolute inset-0 z-0 opacity-20">
+          <div className="absolute inset-0 bg-black/60 z-10"></div>
+          <div className="w-full h-full relative">
+            <Image 
+              src="/mock/kitchens/kitchen-2.jpg"
+              alt="Kitchen design background"
+              fill
+              className="object-cover"
+              sizes="100vw"
+            />
+          </div>
+        </div>
+        
+        <div className="container mx-auto px-4 max-w-4xl relative z-10">
           <h2 className="text-3xl font-serif text-center mb-12">What Our Clients Say</h2>
           
           <div className="text-center">
