@@ -1,36 +1,61 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Northbay Kitchen & Bath Design Center (NBKB)
+
+A mobile-first, headless-Shopify demo site showcasing NBKB's high-end kitchen & bath remodel expertise. This project mirrors the aesthetic of Studio McGee and can be connected to a live Shopify store via a simple environment flag change.
+
+## Features
+
+- Mobile-first, responsive design
+- Headless Shopify integration
+- High-performance React components
+- Accessible UI (WCAG 2.2 AA compliant)
+- Modern editorial style with brass-accent palette
+
+## Tech Stack
+
+- **Frontend**: Next.js 15 (React 19 App Router), TypeScript
+- **Styling**: TailwindCSS + shadcn/ui
+- **Motion**: Framer Motion
+- **Data**: Switchboard data layer (`local.ts` vs `shopify.ts`)
+- **Headless Commerce**: Shopify Storefront API (GraphQL)
+- **Content**: Contentlayer (MDX)
+- **Hosting**: Vercel
 
 ## Getting Started
 
-First, run the development server:
-
 ```bash
+# Install dependencies
+npm install
+
+# Run development server
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+
+# Build for production
+npm run build
+
+# Start production server
+npm run start
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Environment Configuration
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+The application uses a switchboard data layer to toggle between local mock data and the Shopify API:
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```
+# Use local mock data
+NEXT_PUBLIC_BACKEND=local
 
-## Learn More
+# Use live Shopify data
+NEXT_PUBLIC_BACKEND=shopify
+```
 
-To learn more about Next.js, take a look at the following resources:
+## Project Structure
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- `/src/app/*` - Next.js App Router pages
+- `/src/components` - Reusable UI components
+- `/src/lib/api` - Data fetching layer
+- `/src/content` - MDX content
+- `/public/mock` - Mock images for development
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## License
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+[MIT](LICENSE)
